@@ -1,0 +1,22 @@
+#include<iostream>
+#include<stdio.h>
+#include<math.h>
+using namespace std;
+int main()
+{
+    int N, i, j;
+    cin>>N;
+    int T[105][105];
+    int fact = 1;
+    for(i=0;i<(N/2);i++)
+    {
+        for(j=0;j<2;j++)
+        {
+            scanf("%d",&T[i][j]);
+            fact = fact*T[i][j];
+        }
+    }
+
+    cout<<fact;
+
+}
