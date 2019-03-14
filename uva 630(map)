@@ -1,0 +1,38 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t, N;
+    string s, s1, s2;
+    cin>>t;
+    for(int i=0; i<t; i++)
+    {
+        map<string, string>mp;
+        cin>>N;
+        for(int j=0; j<N; j++)
+        {
+            cin>>s;
+            s1 = s;
+            sort(s1.begin(),s1.end());
+            mp[s1] = s;
+        }
+         while(cin>>s2)
+         {
+             if(s2=="END")
+             {
+                 break;
+             }
+             sort(s2.begin(),s2.end());
+             {
+                 for(int k=0; k<s2.size(); k++)
+                 {
+                      if(mp.find(s2)!=mp.end())
+                    cout<<mp[s2]<<endl;
+
+                 }
+
+             }
+         }
+
+    }
+}
