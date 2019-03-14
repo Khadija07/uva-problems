@@ -1,0 +1,62 @@
+#include<bits/stdc++.h>
+using namespace std;
+typedef long long int ll;
+int cnt;
+ll fun(ll n)
+{
+    if(n==1)
+    {
+        return 1;
+    }
+        cnt++;
+
+    if(n%2==0)
+    {
+        return fun(n/2);
+    }
+    else
+    {
+        return fun((3*n)+1);
+    }
+
+}
+int main()
+{
+    ll a, b, mx, p;
+    while(cin>>a>>b)
+    {
+        if(a==0 && b==0)
+        {
+            break;
+        }
+        if(a>b)
+        {
+            swap(a,b);
+        }
+        if(a==1 && b==1)
+        {
+            mx = 3;
+            p=a;
+        printf("Between %lld and %lld, %lld generates the longest sequence of %lld values.\n",a,b,p,mx);
+        continue;
+
+        }
+        mx=-1;p=0;
+        for(int i=a; i<=b; i++)
+        {
+            cnt = 0;
+            fun(i);
+            if(mx<cnt)
+            {
+                mx = cnt;
+                p=i;
+            }
+        }
+        printf("Between %lld and %lld, %lld generates the longest sequence of %lld values.\n",a,b,p,mx);
+    }
+    return 0;
+}
+
+
+
+
