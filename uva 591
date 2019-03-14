@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n, d, k=1;
+    while(cin>>n)
+    {
+        if(n==0)
+        {
+            break;
+        }
+        int sum =0, s=0, b[105];
+        for(int i=0; i<n; i++)
+        {
+            cin>>b[i];
+            sum = sum + b[i];
+        }
+        d = sum/n;
+        for(int j=0; j<n; j++)
+        {
+            if(b[j]<d)
+            {
+                s = s + (d-b[j]);
+            }
+        }
+        printf("Set #%d\n",k);
+        printf("The minimum number of moves is %d.\n",s);
+        k++;
+        printf("\n");
+    }
+}
