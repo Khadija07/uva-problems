@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string s;
+    while(getline(cin,s))
+    {
+        if(s=="0")
+        {
+            break;
+        }
+        int len = s.size();
+        int t=0, l=len;
+
+        for(int i=0; i<l; i++)
+        {
+            s[i] = s[i] - 48;
+            t = t + (s[i]*(pow(2,len)-1));
+            len--;
+        }
+        cout<<t<<endl;
+    }
+    return 0;
+}
