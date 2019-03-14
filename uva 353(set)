@@ -1,0 +1,49 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string s, sk, sr, sR;
+    while(cin>>s)
+    {
+        set<string>st;
+        st.insert(s);
+        for(int i=0; i<s.size(); i++)
+        {
+            for(int j=0; j<s.size(); j++)
+            {
+                sk = s.substr(i,j);
+                if(sk=="")
+                {
+                    continue;
+                }
+                st.insert(sk);
+            }
+        }
+        int c=0;
+        set<string> :: iterator it;
+        for(it=st.begin(); it!=st.end(); it++)
+        {
+
+            sr = *it;
+            reverse(sr.begin(),sr.end());
+            if(sr==*it)
+            {
+                c++;
+            }
+
+        }
+        printf("The string '%s' contains %d palindromes.\n",s.data(),c);
+
+    }
+}
+/*set <int> st;
+st.insrt(1);
+st.insert(3);
+st.inser(2);
+set <int > :: iterator it;
+
+for( it = st.begin();it!=st.end();it++)
+{
+cout<<*it<<endl;
+}*/
+
